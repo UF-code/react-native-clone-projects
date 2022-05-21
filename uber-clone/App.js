@@ -1,15 +1,21 @@
 import { StyleSheet, Text, View } from 'react-native'
+
+// Redux
 import { Provider } from 'react-redux'
 import { store } from './store'
 
-// Setting up redux
+// Screens
+import HomeScreen from './screens/HomeScreen.jsx'
+
+// react native elements
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 export default function App() {
     return (
         <Provider store={store}>
-            <View style={styles.container}>
-                <Text>Let's build UBER!</Text>
-            </View>
+            <SafeAreaProvider>
+                <HomeScreen />
+            </SafeAreaProvider>
         </Provider>
     )
 }
